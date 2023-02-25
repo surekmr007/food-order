@@ -9,9 +9,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 2%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
+}
+.header h1 {
+  margin-left: 15px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-image {
@@ -26,4 +34,25 @@
   height: 100%;
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
+}
+.button {
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 50px;
+  align-items: center;
+  background-color: #8a2b06;
+  border: none;
+}
+.button span {
+  display: flex;
+  font-size: 15px;
+  color: white;
+  align-items: center;
+}
+.button :hover,
+.button:active {
+  border: none;
+  background-color: #8a2b06;
+  border-radius: 20px;
 }
