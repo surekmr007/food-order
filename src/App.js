@@ -8,6 +8,7 @@ import AuthForm from "./components/Auth/AuthForm";
 
 import CartProvider from "./store/CartProvider";
 import AuthContext from "./store/Auth-context";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -25,6 +26,8 @@ function App() {
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
+      <Toaster />
+
       <main>
         {!ctx.isLoggedIn && (
           <Fragment>
