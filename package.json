@@ -1,6 +1,6 @@
 {
   "name": "react-complete-guide",
-  "homepage": "http://surekmr007.github.io/meals-without-http",
+  "homepage": "http://surekmr007.github.io/food-order",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
