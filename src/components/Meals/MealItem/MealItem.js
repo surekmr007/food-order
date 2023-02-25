@@ -13,6 +13,7 @@ const MealItem = (props) => {
   const addToCartHandler = (amount) => {
     cartCtx.addItem({
       id: props.id,
+      url: props.url,
       name: props.name,
       amount: amount,
       price: props.price,
@@ -23,10 +24,22 @@ const MealItem = (props) => {
   return (
     <li className={classes.meal}>
       <div>
-        <h3>{props.name}</h3>
-        <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>₹{price}</div>
+        <div className={classes.container}>
+          <img
+            className={classes.image}
+            width={250}
+            height={250}
+            src={props.url}
+            alt={props.name + "_pic"}
+          />
+          <div className={classes.details}>
+            <h3>{props.name}</h3>
+            <div className={classes.price}>₹{price}</div>
+          </div>
+        </div>
       </div>
+      <div className={classes.description}>{props.description}</div>
+
       <div>
         <MealItemForm onAddToCart={addToCartHandler} />
       </div>

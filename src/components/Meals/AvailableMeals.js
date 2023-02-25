@@ -12,20 +12,28 @@ const AvailableMeals = () => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://react-meal-3b5f5-default-rtdb.firebaseio.com/meals.json"
+        "https://react-meal-3b5f5-default-rtdb.firebaseio.com/meals.json",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
+
+      console.log(response);
 
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
 
       const responseData = await response.json();
-
+      console.log(responseData);
       const loadedMeals = [];
 
       for (const key in responseData) {
         loadedMeals.push({
           id: key,
+          url: responseData[key].url,
           name: responseData[key].name,
           description: responseData[key].description,
           price: responseData[key].price,
@@ -62,6 +70,7 @@ const AvailableMeals = () => {
     <MealItem
       key={meal.id}
       id={meal.id}
+      url={meal.url}
       name={meal.name}
       description={meal.description}
       price={meal.price}
