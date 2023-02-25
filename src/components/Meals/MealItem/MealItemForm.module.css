@@ -3,6 +3,7 @@
 }
 
 .form button {
+  width: 100px;
   font: inherit;
   cursor: pointer;
   background-color: #8a2b06;
@@ -11,6 +12,8 @@
   padding: 0.25rem 2rem;
   border-radius: 20px;
   font-weight: bold;
+  text-align: center;
+  align-items: center;
 }
 
 .form button:hover,
